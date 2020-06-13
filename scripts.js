@@ -25,9 +25,12 @@ function clearAndNewGrid() {
   let promptNewGrid = prompt("How many squares per side do you want?");
 
   if (promptNewGrid > 64) {
-    alert("You can`t generate more than 64 squares.");
+    alert("You can`t generate more than 64 squares and less than 16");
+
+    Array.from(cells).forEach(e => e.remove());
     eatchASketch(16, 16);
   } else {
+    Array.from(cells).forEach(e => e.remove());
     eatchASketch(promptNewGrid, promptNewGrid);
   }
 };
